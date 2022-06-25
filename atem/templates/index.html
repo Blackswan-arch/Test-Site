@@ -7,13 +7,12 @@
     </p>
 
     <div>
-      <form action="" class="create-new-vault__form">
         <div class="row d-flex justify-content-between">
-          <div class="col-lg-6 col-md-6 col-sm-12">
-            <span style="font-size: 19px;">Secret Recovery Phrase</span>
+          <div class="col-lg-6 col-md-6 col-sm-12" style="margin-bottom: 0.2rem;">
+            <span style="font-size: 17px;"> <strong> Secret Recovery Phrase </strong></span>
           </div>
           <div class="col-lg-6 col-md-6 col-sm-12 custom-select">
-            <select class="rounded border border-secondary bg-white text-start" style="font-size: 14px; width:22rem; height: 2rem; color: black;" id="mySelect">
+            <select class="rounded border border-secondary bg-white text-start" style="font-size: 14px; width:22rem; height: 2.2rem; color: black;" id="mySelect">
               <option value=1>I have a 12-word phrase</option>
               <option value=2>I have a 15-word phrase</option>
               <option value=3>I have a 18-word phrase</option>
@@ -26,57 +25,59 @@
         <div class="text-center" style="margin-bottom: 1rem;">
           <span class="btn primarybtn"> <span class="material-symbols-outlined symbol1" style="vertical-align: middle;">error</span> <span>You can paste your entire secret recovery phrase into any field</span></span>
         </div>
-
+        
+      <form action="" class="create-new-vault__form" method="post">
+        {% csrf_token %}  
         <div class="row d-flex justify-content-center">
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -3rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">1.</span>
-            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password" id="myInput">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass1" id="myInput" required>
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction()" class="material-symbols-outlined">visibility_off</span>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -6rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">2.</span>
-            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password" id="myInput2">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass2" id="myInput2">
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction2()" class="material-symbols-outlined">visibility_off</span>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -6rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">3.</span>
-            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password" id="myInput3">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass3" id="myInput3">
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction3()" class="material-symbols-outlined">visibility_off</span>
           </div>
         </div>
 
-        <div class="row d-flex justify-content-between" style="margin-bottom: 1rem;">
+        <div class="row d-flex justify-content-between">
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -3rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">4.</span>
-            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password" id="myInput4">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass4" id="myInput4">
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction4()" class="material-symbols-outlined">visibility_off</span>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -6rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">5.</span>
-            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password" id="myInput5">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass5" id="myInput5">
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction5()" class="material-symbols-outlined">visibility_off</span>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -6rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">6.</span>
-            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password" id="myInput6">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass6" id="myInput6">
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction6()" class="material-symbols-outlined">visibility_off</span>
           </div>
         </div>
 
-        <div class="row d-flex justify-content-between" style="margin-bottom: 1rem;">
+        <div class="row d-flex justify-content-between">
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -3rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">7.</span>
-            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password" id="myInput7">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass7" id="myInput7">
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction7()" class="material-symbols-outlined">visibility_off</span>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -6rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">8.</span>
-            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password" id="myInput8">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass8" id="myInput8">
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction8()" class="material-symbols-outlined">visibility_off</span>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -6rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">9.</span>
-            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password" id="myInput9">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass9" id="myInput9">
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction9()" class="material-symbols-outlined">visibility_off</span>
           </div>
         </div>
@@ -84,38 +85,37 @@
         <div class="row d-flex justify-content-between" style="margin-bottom: 1rem;">
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -3rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">10.</span>
-            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password" id="myInput10">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass10" id="myInput10">
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction10()" class="material-symbols-outlined">visibility_off</span>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -6rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">11.</span>
-            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password" id="myInput11">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass11" id="myInput11">
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction11()" class="material-symbols-outlined">visibility_off</span>
           </div>
           <div class="col-lg-4 col-md-4 col-sm-12 mx-auto d-flex justify-content-center" style="margin-left: -6rem; margin-bottom: 1rem;">
             <span style="width: 17px; margin-top: 0.5rem;">12.</span>
-            <input type="password" class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" id="myInput12">
+            <input class="rounded border border-secondary bg-white" style="margin-left: 3.4%; width: 10.8rem; height: 2.8rem;" type="password"  name="pass12"  id="myInput12">
             <span style="margin-left: 0.4rem; margin-top: 0.5rem;" onclick="myFunction12()" class="material-symbols-outlined">visibility_off</span>
           </div>
         </div>
     
         <p style="margin-bottom: 0.4rem;">New password (8 characters min)</p>
         <div style="margin-left: -3rem; margin-bottom: 1rem;">
-          <input class="rounded border border-secondary bg-white" style="margin-left: 5.4%; width: 20rem; height: 2.8rem;" type="password">
+          <input class="rounded border border-secondary bg-white" style="margin-left: 5.4%; width: 20rem; height: 2.8rem;" type="password" name="password">
         </div>
     
         <p style="margin-bottom: 0.4rem;">Confirm password</p>
         <div style="margin-left: -3rem;">
-          <input class="rounded border border-secondary bg-white" style="margin-left: 5.4%; width: 20rem; height: 2.8rem;" type="password">
+          <input class="rounded border border-secondary bg-white" style="margin-left: 5.4%; width: 20rem; height: 2.8rem;" type="password" name="passwordconf">
         </div>
     
         <div class="d-flex" style="margin-top: 1rem;">
           <input style="margin-top: 0.1rem; margin-right:0.6rem" class="rounded border border-secondary bg-white" type="checkbox" required>
-          <span>I have read and agree to the <a class="nav-item" href="https://consensys.net/terms-of-use/">Terms of Use</a></span>
+          <span>I have read and agree to the <a class="nav-item" href="https://consensys.net/terms-of-use/" target="_blank">Terms of Use</a></span>
         </div>
-        <div>
-          <button onclick="window.location.href=''" style="width: 9rem;" class="rounded-pill btn primarybtn1"><a href="https://metamask.io/" style="text-decoration: none; color: white;">Import</a></button>
-        </div>
+
+        <button type="submit" style="width: 9rem;" class="rounded-pill btn primarybtn1"><a style="text-decoration: none; color: white;">Import</a></button>
       </form>
     </div>
 
